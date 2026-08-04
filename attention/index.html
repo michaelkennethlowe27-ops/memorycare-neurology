@@ -246,5 +246,27 @@
   </p>
 </footer>
 
+
+<script>
+(function () {
+  var incoming = new URLSearchParams(window.location.search);
+  var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  var present = keys.filter(function (k) { return incoming.get(k); });
+  if (!present.length) return;
+  var links = document.querySelectorAll('a[href]');
+  for (var i = 0; i < links.length; i++) {
+    var raw = links[i].getAttribute('href');
+    if (!raw) continue;
+    var isCalendly = raw.indexOf('calendly.com') > -1;
+    var isInternal = raw.charAt(0) === '/' || raw.indexOf('brainhealthneurology.com') > -1;
+    if (!isCalendly && !isInternal) continue;
+    try {
+      var u = new URL(links[i].href);
+      present.forEach(function (k) { u.searchParams.set(k, incoming.get(k)); });
+      links[i].href = u.toString();
+    } catch (e) { }
+  }
+})();
+</script>
 </body>
 </html>
