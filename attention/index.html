@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Brain Fog — Brain Health Neurology</title>
-<meta name="description" content="Brain fog is a real complaint that no specialty has claimed. A physician-directed cognitive assessment and consultation with Michael K. Lowe, MD.">
+<title>Attention and Focus — Brain Health Neurology</title>
+<meta name="description" content="Objective cognitive assessment and physician consultation for adults who have struggled with attention. Not a diagnosis, not a prescription — a measurement. Michael K. Lowe, MD.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -20,8 +20,8 @@
     --text-mid: #4b5563;
     --text-light: #6b7280;
     --border: #e5e0d5;
-    --seg: #1f6f6b;
-    --seg-light: #3e9089;
+    --seg: #a9552e;
+    --seg-light: #d69a72;
   }
 
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -29,7 +29,6 @@
   body { font-family:'Lato',sans-serif; background:var(--cream); color:var(--text-dark); line-height:1.75; font-weight:400; overflow-x:clip; }
   .container { max-width:900px; margin:0 auto; padding:0 24px; }
 
-  /* NAV — parent lockup with segment badge */
   .site-nav { position:sticky; top:0; z-index:100; background:var(--navy); padding:16px 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
   .nav-lockup { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
   .nav-brand { font-family:'Cormorant Garamond',serif; font-size:21px; color:var(--cream); letter-spacing:0.04em; text-decoration:none; }
@@ -39,7 +38,6 @@
   .site-nav a.nav-link { color:var(--gold-light); text-decoration:none; font-size:14.5px; letter-spacing:0.07em; text-transform:uppercase; opacity:0.85; transition:opacity 0.2s; }
   .site-nav a.nav-link:hover { opacity:1; }
 
-  /* HERO — lighter than parent hero, differentiating the child */
   .hero { background:var(--warm-white); border-bottom:1px solid var(--border); padding:80px 24px 68px; text-align:center; }
   .hero-eyebrow { font-size:13.5px; letter-spacing:0.22em; text-transform:uppercase; color:var(--seg); font-weight:700; margin-bottom:22px; }
   .hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(36px,6.4vw,60px); font-weight:600; line-height:1.12; color:var(--navy); letter-spacing:-0.01em; }
@@ -50,7 +48,6 @@
   .hero-cta:hover { background:var(--seg); transform:translateY(-2px); }
   .hero-price { font-size:14.5px; letter-spacing:0.1em; color:var(--text-light); margin-top:20px; text-transform:uppercase; }
 
-  /* SECTIONS */
   .section { padding:66px 0; }
   .section-alt { background:var(--warm-white); }
   .eyebrow { font-size:13.5px; letter-spacing:0.2em; text-transform:uppercase; color:var(--seg); font-weight:700; margin-bottom:14px; }
@@ -59,7 +56,6 @@
   .body + .body { margin-top:20px; }
   .lead-in { font-family:'Cormorant Garamond',serif; font-size:clamp(21px,2.8vw,27px); color:var(--navy); line-height:1.45; max-width:660px; margin-bottom:26px; }
 
-  /* EVIDENCE */
   .ev-list { list-style:none; margin-top:30px; }
   .ev-item { display:flex; gap:18px; padding:22px 0; border-top:1px solid var(--border); }
   .ev-item:last-child { border-bottom:1px solid var(--border); }
@@ -67,14 +63,17 @@
   .ev-claim { font-size:clamp(16px,2vw,18px); color:var(--text-dark); line-height:1.75; }
   .ev-src { display:block; font-size:15px; color:var(--text-light); margin-top:8px; font-style:italic; line-height:1.65; }
 
-  /* STEPS */
-  .steps { counter-reset:step; margin-top:8px; }
+  .steps { margin-top:8px; }
   .step { display:flex; gap:20px; padding:20px 0; }
   .step-mark { font-family:'Cormorant Garamond',serif; font-size:24px; letter-spacing:0.06em; color:var(--gold); font-weight:600; padding-top:2px; flex-shrink:0; width:48px; }
   .step h3 { font-family:'Cormorant Garamond',serif; font-size:25px; font-weight:600; color:var(--navy); margin-bottom:6px; }
   .step p { font-size:17px; color:var(--text-mid); line-height:1.8; }
 
-  /* CTA */
+  .note { background:#fff; border:1px solid var(--border); border-left:3px solid var(--seg); border-radius:6px; padding:30px 32px; margin-top:12px; }
+  .note h3 { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:600; color:var(--navy); margin-bottom:12px; }
+  .note p { font-size:17px; color:var(--text-mid); line-height:1.85; }
+  .note p + p { margin-top:14px; }
+
   .cta-box { background:var(--navy); border-radius:6px; padding:52px 34px; text-align:center; }
   .cta-box h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(26px,4vw,36px); color:var(--cream); font-weight:600; margin-bottom:14px; }
   .cta-box p { color:rgba(250,248,244,0.72); font-size:17.5px; max-width:520px; margin:0 auto 26px; }
@@ -83,7 +82,6 @@
   .cta-btn { display:inline-block; background:var(--gold); color:var(--navy); text-decoration:none; font-size:15px; letter-spacing:0.13em; text-transform:uppercase; font-weight:700; padding:17px 44px; border-radius:3px; transition:background 0.2s, transform 0.2s, box-shadow 0.2s; }
   .cta-btn:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 22px rgba(0,0,0,0.30); }
 
-  /* REFERENCES */
   .refs { padding:48px 0 12px; border-top:1px solid var(--border); }
   .refs h3 { font-size:13px; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-light); font-weight:700; margin-bottom:20px; }
   .refs ol { margin-left:20px; }
@@ -98,7 +96,7 @@
   .footer a:hover { color:var(--gold-light); }
 
   a:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
-  p, li, .body, .ev-claim, .lead-in, .step p { orphans:3; widows:3; }
+  p, li, .body, .ev-claim, .lead-in, .step p, .note p { orphans:3; widows:3; }
   h1, h2, h3, .title, .hero-title { orphans:2; widows:2; }
   @media (prefers-reduced-motion:reduce) { * { transition:none !important; } .hero-cta:hover, .cta-btn:hover { transform:none; } }
 </style>
@@ -109,7 +107,7 @@
   <div class="nav-lockup">
     <a class="nav-brand" href="https://brainhealthneurology.com/">Brain Health&nbsp;Neurology</a>
     <span class="nav-divider"></span>
-    <span class="nav-segment">Brain Fog</span>
+    <span class="nav-segment">Attention and Focus</span>
   </div>
   <div class="nav-links">
     <a class="nav-link" href="#evidence">The Evidence</a>
@@ -120,55 +118,55 @@
 
 <header class="hero">
   <p class="hero-eyebrow">The Brain Health&nbsp;Blueprint</p>
-  <h1 class="hero-title">You are not imagining&nbsp;it.</h1>
-  <p class="hero-sub">Brain fog is the most common cognitive complaint in medicine — and the one no specialty has agreed to&nbsp;own.</p>
+  <h1 class="hero-title">You have been compensating for thirty&nbsp;years.</h1>
+  <p class="hero-sub"><span>It mostly&nbsp;worked.</span><span>It also cost more than anyone around you could&nbsp;see.</span></p>
   <div class="rule"></div>
-  <a href="https://calendly.com/michaelkennethlowe27/30min?utm_source=bhn&utm_medium=segment&utm_campaign=brain_fog" class="hero-cta">Get Started →</a>
+  <a href="https://calendly.com/michaelkennethlowe27/30min?utm_source=bhn&utm_medium=segment&utm_campaign=attention" class="hero-cta">Get Started →</a>
   <p class="hero-price">$399 &nbsp;·&nbsp; Cash Pay &nbsp;·&nbsp; No Insurance</p>
 </header>
 
 <section class="section">
   <div class="container">
     <p class="eyebrow">Why You Are Here</p>
-    <p class="lead-in">You have described this to a doctor before. Foggy. Slower. Losing the thread mid-sentence. Reaching for words that used to be there. And you were told your labs looked&nbsp;fine.</p>
-    <p class="body">That answer is not wrong, exactly. It is incomplete. Standard bloodwork was never designed to measure how well you think — and a fifteen-minute visit was never designed to find out&nbsp;why.</p>
-    <p class="body">Brain fog is not a diagnosis. It is a symptom with a long list of possible drivers: sleep, metabolism, medication, vascular health, inflammation, thyroid, mood, and simple accumulated load. Sorting through that list takes objective measurement and unhurried time. Almost nothing in the current system provides&nbsp;either.</p>
+    <p class="lead-in">The lists you make and lose. The deadline that only becomes real at midnight. The book you have started four&nbsp;times.</p>
+    <p class="body">You may have suspected this about yourself for a very long time. Or you may have only just started wondering — sitting in a doctor's office while someone described your child, recognizing far more of it in yourself than you&nbsp;expected.</p>
+    <p class="body">Either way, the usual next step is a questionnaire. You answer twenty items about yourself from memory, and a number comes out. That is genuinely useful information. It is also entirely self-reported, and it cannot distinguish lifelong attention difficulty from the four or five other things that produce exactly the same&nbsp;complaint.</p>
   </div>
 </section>
 
 <section class="section section-alt" id="evidence">
   <div class="container">
     <p class="eyebrow">The Evidence</p>
-    <h2 class="title">Why this is worth taking&nbsp;seriously.</h2>
-    <p class="body">Four findings that shape how this assessment is built. Every source is peer-reviewed and linked&nbsp;below.</p>
+    <h2 class="title">What is actually&nbsp;established.</h2>
+    <p class="body">Four findings from the peer-reviewed literature. Every source is linked&nbsp;below.</p>
 
     <ul class="ev-list">
       <li class="ev-item">
         <span class="ev-num">1</span>
         <div>
-          <span class="ev-claim">Self-reported cognitive change is not just anxiety. A meta-analysis of 46 longitudinal studies covering more than 74,000 people found that subjective cognitive decline was associated with roughly twice the risk of later developing&nbsp;dementia.</span>
-          <span class="ev-src">Pike et&nbsp;al., <em>Neuropsychology Review</em>, 2022</span>
+          <span class="ev-claim">Adults are the larger and less-examined group. ADHD occurs in roughly 5.9% of young people and 2.5% of adults — a population many times the number who were ever evaluated as&nbsp;children.</span>
+          <span class="ev-src">Faraone et&nbsp;al., <em>Neuroscience &amp; Biobehavioral&nbsp;Reviews</em>, 2021</span>
         </div>
       </li>
       <li class="ev-item">
         <span class="ev-num">2</span>
         <div>
-          <span class="ev-claim">Much of the risk is modifiable. The 2024 Lancet Commission identified fourteen risk factors that, addressed across a lifetime, are associated with an estimated 45% of dementia cases&nbsp;worldwide.</span>
-          <span class="ev-src">Livingston et&nbsp;al., <em>The Lancet</em>, 2024</span>
+          <span class="ev-claim">It runs in families, strongly. Across 37 twin studies, the average heritability is 74% — higher than most conditions in psychiatry. Parents frequently recognize their own history in a child's&nbsp;evaluation.</span>
+          <span class="ev-src">Faraone &amp; Larsson, <em>Molecular Psychiatry</em>, 2019</span>
         </div>
       </li>
       <li class="ev-item">
         <span class="ev-num">3</span>
         <div>
-          <span class="ev-claim">Cognition can be measured objectively. The assessment used here was validated against a normative sample of 1,069 people aged 7 to 90, with test-retest reliability comparable to conventional pencil-and-paper neuropsychological&nbsp;testing.</span>
-          <span class="ev-src">Gualtieri &amp; Johnson, <em>Archives of Clinical&nbsp;Neuropsychology</em>, 2006</span>
+          <span class="ev-claim">Attention complaints are not specific. Across 70 studies and 147 cognitive tests, ordinary sleep loss produced its largest effect on exactly the capacity people describe when they say they cannot&nbsp;focus.</span>
+          <span class="ev-src">Lim &amp; Dinges, <em>Psychological Bulletin</em>, 2010</span>
         </div>
       </li>
       <li class="ev-item">
         <span class="ev-num">4</span>
         <div>
-          <span class="ev-claim">Some causes are treatable. Untreated obstructive sleep apnea alone shows measurable deficits across attention, processing speed, executive function, and memory — a common, findable, and manageable&nbsp;contributor.</span>
-          <span class="ev-src">Stranks &amp; Crowe, <em>Archives of Clinical&nbsp;Neuropsychology</em>, 2016</span>
+          <span class="ev-claim">Attention can be measured rather than described. The assessment used here was validated against a normative sample of 1,069 people aged 7 to 90, with reliability comparable to conventional pencil-and-paper neuropsychological&nbsp;testing.</span>
+          <span class="ev-src">Gualtieri &amp; Johnson, <em>Archives of Clinical&nbsp;Neuropsychology</em>, 2006</span>
         </div>
       </li>
     </ul>
@@ -185,14 +183,14 @@
         <span class="step-mark">01</span>
         <div>
           <h3>Measure</h3>
-          <p>A validated computerized assessment, 30 to 40 minutes, taken at home on your own device. It scores nine cognitive domains against age-matched norms. Dr. Lowe reviews your results before you&nbsp;speak.</p>
+          <p>A validated computerized assessment, 30 to 40 minutes, taken at home on your own device. It scores nine cognitive domains against age-matched norms, including sustained attention and cognitive&nbsp;flexibility.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-mark">02</span>
         <div>
           <h3>Interpret</h3>
-          <p>An unhurried consultation — typically 45 to 60 minutes, with no hard stop. Your results in plain language, and a structured review of the risk factors that apply specifically to&nbsp;you.</p>
+          <p>An unhurried consultation — typically 45 to 60 minutes, with no hard stop. What the numbers show, and a careful look at sleep, mood, thyroid, medication, and the other common drivers of the same&nbsp;symptoms.</p>
         </div>
       </div>
       <div class="step">
@@ -206,14 +204,24 @@
   </div>
 </section>
 
-<section class="section section-alt" id="schedule">
+<section class="section section-alt">
+  <div class="container">
+    <div class="note">
+      <h3>This is not a diagnosis, and not&nbsp;a&nbsp;prescription.</h3>
+      <p>The World Federation of ADHD is unambiguous on this point: ADHD is diagnosed through clinical interview and history, and cannot be diagnosed by rating scales, neuropsychological testing, or brain imaging. No computerized test can hand you that answer, whatever the telehealth stimulant mills&nbsp;imply.</p>
+      <p>The Brain Health Blueprint does not diagnose ADHD and does not prescribe or manage stimulant medication. What it gives you is the objective layer beneath the questionnaire — real numbers on the domains attention actually lives in, benchmarked against your age, plus a structured review of everything else that produces the same picture.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="schedule">
   <div class="container">
     <div class="cta-box">
-      <h2>Find out where you actually&nbsp;stand.</h2>
-      <p>One flat fee. No insurance, no referral, no waiting room, and no clock on&nbsp;the&nbsp;wall.</p>
+      <h2>Stop guessing at your own&nbsp;history.</h2>
+      <p>One flat fee. No insurance, no referral, and no twenty-item questionnaire standing in for an&nbsp;answer.</p>
       <div class="cta-price">$399</div>
       <p class="cta-note">Assessment · Physician Consultation · Written&nbsp;Plan</p>
-      <a href="https://calendly.com/michaelkennethlowe27/30min?utm_source=bhn&utm_medium=segment&utm_campaign=brain_fog" class="cta-btn">Schedule Online →</a>
+      <a href="https://calendly.com/michaelkennethlowe27/30min?utm_source=bhn&utm_medium=segment&utm_campaign=attention" class="cta-btn">Schedule Online →</a>
     </div>
   </div>
 </section>
@@ -221,13 +229,13 @@
 <section class="container refs">
   <h3>References</h3>
   <ol>
-    <li>Pike KE, Cavuoto MG, Li L, Wright BJ, Kinsella GJ. Subjective Cognitive Decline: Level of Risk for Future Dementia and Mild Cognitive Impairment, a Meta-Analysis of Longitudinal&nbsp;Studies. <em>Neuropsychology Review</em>. 2022;32(4):703–735. <a href="https://doi.org/10.1007/s11065-021-09522-3" target="_blank" rel="noopener">doi.org/10.1007/s11065-021-09522-3</a></li>
-    <li>Livingston G, Huntley J, Liu KY, et al. Dementia prevention, intervention, and care: 2024 report of the Lancet standing&nbsp;Commission. <em>The Lancet</em>. 2024;404(10452):572–628. <a href="https://doi.org/10.1016/S0140-6736(24)01296-0" target="_blank" rel="noopener">doi.org/10.1016/S0140-6736(24)01296-0</a></li>
+    <li>Faraone SV, Banaschewski T, Coghill D, et&nbsp;al. The World Federation of ADHD International Consensus Statement: 208 Evidence-based conclusions about the&nbsp;disorder. <em>Neuroscience &amp; Biobehavioral&nbsp;Reviews</em>. 2021;128:789–818. <a href="https://doi.org/10.1016/j.neubiorev.2021.01.022" target="_blank" rel="noopener">doi.org/10.1016/j.neubiorev.2021.01.022</a></li>
+    <li>Faraone SV, Larsson H. Genetics of attention deficit hyperactivity&nbsp;disorder. <em>Molecular Psychiatry</em>. 2019;24(4):562–575. <a href="https://doi.org/10.1038/s41380-018-0070-0" target="_blank" rel="noopener">doi.org/10.1038/s41380-018-0070-0</a></li>
+    <li>Lim J, Dinges DF. A meta-analysis of the impact of short-term sleep deprivation on cognitive&nbsp;variables. <em>Psychological Bulletin</em>. 2010;136(3):375–389. <a href="https://doi.org/10.1037/a0018883" target="_blank" rel="noopener">doi.org/10.1037/a0018883</a></li>
     <li>Gualtieri CT, Johnson LG. Reliability and validity of a computerized neurocognitive test battery, CNS Vital&nbsp;Signs. <em>Archives of Clinical&nbsp;Neuropsychology</em>. 2006;21(7):623–643. <a href="https://doi.org/10.1016/j.acn.2006.05.007" target="_blank" rel="noopener">doi.org/10.1016/j.acn.2006.05.007</a></li>
-    <li>Stranks EK, Crowe SF. The Cognitive Effects of Obstructive Sleep Apnea: An Updated&nbsp;Meta-analysis. <em>Archives of Clinical&nbsp;Neuropsychology</em>. 2016;31(2):186–193. <a href="https://doi.org/10.1093/arclin/acv087" target="_blank" rel="noopener">doi.org/10.1093/arclin/acv087</a></li>
   </ol>
 
-  <p class="disclaimer">The Brain Health Blueprint is a health assessment and educational consultation. It is not a diagnostic evaluation, does not establish a traditional physician-patient clinical treatment relationship, and is not a substitute for care from your primary physician or a treating neurologist.</p>
+  <p class="disclaimer">The Brain Health Blueprint is a health assessment and educational consultation. It is not a diagnostic evaluation, does not diagnose ADHD, does not include prescription or management of controlled substances, and does not establish a traditional physician-patient clinical treatment&nbsp;relationship.</p>
 </section>
 
 <footer class="footer">
