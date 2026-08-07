@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Brain Health Blueprint — Brain Health Neurology</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Lato:wght@300;400;700&display=swap');
+  :root {
+    --navy: #1a2744; --navy-light: #223060; --gold: #c9a84c; --gold-light: #e8c97a;
+    --cream: #faf8f4; --warm-white: #f5f2ec;
+    --text-dark: #1a2744; --text-mid: #4a5568; --text-light: #718096; --border: #e2d9c8;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { overflow-x:clip; scroll-behavior:smooth; }
+  body { font-family:'Lato',sans-serif; background:var(--cream); color:var(--text-dark); line-height:1.85; font-size:18px; width:100%; overflow-x:clip; }
+
+  .site-nav { position:sticky; top:0; z-index:100; background:var(--navy); padding:16px 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+  .nav-links { display:flex; gap:20px; align-items:center; flex-wrap:wrap; }
+  .site-nav a { color:var(--gold-light); text-decoration:none; font-size:13px; letter-spacing:0.07em; text-transform:uppercase; opacity:0.85; transition:opacity 0.2s; }
+  .site-nav a:hover { opacity:1; }
+  .nav-brand { font-family:'Cormorant Garamond',serif; font-size:18px; color:rgba(255,255,255,0.7); font-weight:300; letter-spacing:0.05em; }
+
+  .hero { background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 60%,#2d4a7a 100%); padding:70px 24px 60px; text-align:center; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:radial-gradient(ellipse at center,rgba(201,168,76,0.06) 0%,transparent 60%); pointer-events:none; }
+  .hero-eyebrow { font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold-light); font-weight:700; margin-bottom:16px; opacity:0.85; }
+  .hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(38px,8vw,72px); font-weight:400; color:#fff; line-height:1.1; margin-bottom:14px; }
+  .hero-subtitle { font-size:clamp(17px,3vw,23px); color:rgba(255,255,255,0.65); font-weight:300; letter-spacing:0.03em; margin-bottom:10px; font-family:'Cormorant Garamond',serif; font-style:italic; }
+  .hero-name { font-size:15px; color:rgba(255,255,255,0.45); letter-spacing:0.08em; margin-bottom:32px; }
+  .gold-rule { width:70px; height:1px; background:var(--gold); margin:0 auto 32px; opacity:0.6; }
+  .hero-cta { display:inline-block; background:var(--gold); color:var(--navy); text-decoration:none; font-size:15px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:16px 36px; border-radius:4px; transition:background 0.2s; }
+  .hero-cta:hover { background:var(--gold-light); }
+  .hero-price { font-size:14px; color:rgba(255,255,255,0.38); margin-top:14px; letter-spacing:0.05em; }
+
+  .section { padding:64px 0; }
+  .section-alt { background:var(--warm-white); }
+  .container { max-width:900px; margin:0 auto; padding:0 24px; width:100%; }
+
+  .section-eyebrow { font-size:13px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:12px; display:block; }
+  .section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,5vw,46px); font-weight:400; color:var(--navy); line-height:1.15; margin-bottom:20px; }
+  .section-body { font-size:clamp(16px,2vw,19px); color:var(--text-mid); line-height:1.9; margin-bottom:24px; }
+
+  .deliverables { list-style:none; margin-bottom:0; }
+  .deliverables li { display:flex; gap:16px; align-items:flex-start; padding:20px 0; border-bottom:1px solid var(--border); font-size:clamp(15px,2vw,18px); color:var(--text-dark); line-height:1.75; }
+  .deliverables li:last-child { border-bottom:none; }
+  .diamond { color:var(--gold); font-size:13px; margin-top:7px; flex-shrink:0; }
+  .deliverable-title { font-weight:700; display:block; margin-bottom:4px; color:var(--navy); }
+
+  .steps { display:flex; flex-direction:column; }
+  .step { display:flex; gap:24px; align-items:flex-start; padding:24px 0; border-bottom:1px solid var(--border); }
+  .step:last-child { border-bottom:none; }
+  .step-num { font-family:'Cormorant Garamond',serif; font-size:52px; font-weight:300; color:var(--gold); opacity:0.55; line-height:1; flex-shrink:0; width:56px; }
+  .step-content strong { display:block; font-size:20px; font-weight:700; color:var(--text-dark); margin-bottom:4px; }
+  .step-content span { font-size:17px; color:var(--text-mid); line-height:1.75; }
+
+  .insurance-callout { background:var(--navy); border-radius:10px; padding:44px 36px; }
+  .insurance-callout h3 { font-family:'Cormorant Garamond',serif; font-size:clamp(20px,3.5vw,30px); font-weight:300; color:#fff; margin-bottom:16px; line-height:1.35; }
+  .insurance-callout p { font-size:clamp(15px,2vw,18px); color:rgba(255,255,255,0.65); line-height:1.85; }
+  .insurance-callout p + p { margin-top:16px; }
+
+  /* SAMPLE REPORT */
+  .report-section { text-align:center; }
+  .report-img { width:100%; max-width:700px; border:1px solid var(--border); border-radius:8px; box-shadow:0 4px 24px rgba(0,0,0,0.10); margin:0 auto; display:block; }
+  .report-caption { font-size:14px; color:var(--text-light); margin-top:14px; font-style:italic; }
+
+  .faq-title { font-size:clamp(24px,3.4vw,32px); }
+  .faq-item { border-bottom:1px solid var(--border); }
+  .faq-item:last-of-type { border-bottom:none; }
+  .faq-item summary { list-style:none; cursor:pointer; padding:17px 34px 17px 0; position:relative; font-size:16px; font-weight:700; color:var(--navy); line-height:1.55; }
+  .faq-item summary::-webkit-details-marker { display:none; }
+  .faq-item summary::after { content:'+'; position:absolute; right:6px; top:15px; color:var(--gold); font-size:22px; font-weight:300; line-height:1.4; }
+  .faq-item[open] summary::after { content:'−'; }
+  .faq-item summary:hover { color:var(--navy-light); }
+  .faq-a { font-size:15.5px; color:var(--text-light); line-height:1.8; padding-bottom:20px; }
+  .faq-a + .faq-a { padding-top:12px; }
+
+  .cta-box { background:var(--navy); border-radius:10px; padding:52px 32px; text-align:center; }
+  .cta-box h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(26px,5vw,46px); font-weight:300; color:#fff; margin-bottom:12px; }
+  .cta-box p { font-size:clamp(15px,2vw,18px); color:rgba(255,255,255,0.60); max-width:580px; margin:0 auto 28px; line-height:1.8; }
+  .cta-price { font-family:'Cormorant Garamond',serif; font-size:clamp(44px,7vw,72px); color:var(--gold-light); font-weight:300; margin-bottom:6px; line-height:1; }
+  .cta-price-note { font-size:13px; color:rgba(255,255,255,0.38); margin-bottom:32px; letter-spacing:0.04em; }
+  .cta-btn { display:inline-block; background:var(--gold); color:var(--navy); text-decoration:none; font-size:16px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; padding:16px 40px; border-radius:4px; transition:background 0.2s; margin-bottom:16px; }
+  .cta-btn:hover { background:var(--gold-light); }
+  .cta-divider { font-size:13px; color:rgba(255,255,255,0.25); margin:8px 0 12px; letter-spacing:0.08em; text-transform:uppercase; }
+  .cta-email-btn { display:inline-block; border:1px solid rgba(201,168,76,0.4); color:var(--gold-light); text-decoration:none; font-size:14px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; padding:13px 32px; border-radius:4px; transition:all 0.2s; }
+  .cta-email-btn:hover { background:rgba(201,168,76,0.1); border-color:var(--gold-light); }
+
+  .corp-banner { background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.25); border-radius:8px; padding:24px 28px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; margin-top:44px; }
+  .corp-banner p { font-size:15px; color:var(--text-mid); line-height:1.65; }
+  .corp-banner strong { color:var(--navy); }
+  .corp-banner a { display:inline-block; border:1px solid var(--gold); color:var(--navy); text-decoration:none; font-size:13px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; padding:10px 22px; border-radius:3px; white-space:nowrap; transition:all 0.2s; flex-shrink:0; }
+  .corp-banner a:hover { background:var(--gold); }
+
+  .disclaimer { font-size:13px; color:var(--text-light); font-style:italic; line-height:1.7; border-top:1px solid var(--border); padding-top:20px; margin-top:20px; }
+
+  /* BACK TO TOP */
+  .back-to-top { display:inline-block; margin-top:40px; font-size:13px; color:var(--gold); text-decoration:none; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; border:1px solid rgba(201,168,76,0.35); padding:9px 20px; border-radius:3px; transition:all 0.2s; }
+  .back-to-top:hover { background:rgba(201,168,76,0.08); }
+
+  .page-footer { background:var(--navy); padding:40px 24px; text-align:center; }
+  .page-footer p { color:rgba(255,255,255,0.38); font-size:14px; line-height:1.85; }
+  .page-footer a { color:rgba(255,255,255,0.5); text-decoration:none; }
+  .page-footer a:hover { color:var(--gold-light); }
+
+  /* SEGMENT MENU */
+  .seg-intro { font-size:clamp(16px,2vw,19px); color:var(--text-mid); line-height:1.9; margin-bottom:32px; max-width:640px; }
+  .seg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(252px,1fr)); gap:14px; }
+  .seg-card { position:relative; display:flex; flex-direction:column; justify-content:space-between; gap:22px; background:#fff; border:1px solid var(--border); border-radius:6px; padding:26px 26px 22px; text-decoration:none; overflow:hidden; transition:background 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s; }
+  .seg-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:rgba(201,168,76,0.30); transition:background 0.25s, width 0.25s; }
+  .seg-card:hover { background:var(--navy); border-color:var(--navy); box-shadow:0 10px 28px rgba(26,39,68,0.20); transform:translateY(-3px); }
+  .seg-card:hover::before { background:var(--gold); width:5px; }
+  .seg-diamond { font-size:11px; color:var(--gold); letter-spacing:0.3em; transition:color 0.25s; }
+  .seg-say { font-family:'Cormorant Garamond',serif; font-size:clamp(21px,2.4vw,25px); font-weight:600; line-height:1.28; color:var(--navy); letter-spacing:-0.005em; transition:color 0.25s; }
+  .seg-tag { position:relative; padding-top:14px; font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); font-weight:700; transition:color 0.25s; }
+  .seg-tag::before { content:''; position:absolute; left:0; top:0; width:26px; height:1px; background:var(--gold); opacity:0.45; transition:width 0.25s, opacity 0.25s; }
+  .seg-card:hover .seg-say { color:var(--cream); }
+  .seg-card:hover .seg-tag { color:var(--gold-light); }
+  .seg-card:hover .seg-diamond { color:var(--gold-light); }
+  .seg-card:hover .seg-tag::before { width:44px; opacity:1; }
+  .seg-none { font-size:15px; color:var(--text-light); font-style:italic; line-height:1.75; margin-top:28px; }
+  .seg-none a { color:var(--navy); font-weight:700; text-decoration:underline; text-underline-offset:3px; }
+  a:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+  @media (prefers-reduced-motion:reduce) { .seg-card { transition:none; } .seg-card:hover { transform:none; } }
+
+  /* ORPHAN / WIDOW PREVENTION */
+  p, li, .faq-a, .section-body, .step-content span, .insurance-callout p, .seg-intro, .seg-none { orphans:3; widows:3; }
+  summary { orphans:2; widows:2; }
+  .seg-say { orphans:2; widows:2; }
+  h2, h3, .section-title, .insurance-callout h3 { orphans:2; widows:2; }
+</style>
+</head>
+<body>
+
+<div id="top"></div>
+
+<nav class="site-nav">
+  <span class="nav-brand">Brain Health Neurology</span>
+  <div class="nav-links">
+    <a href="#what-you-get">What's Included</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://www.memorycareneurology.com/blog" target="_blank" rel="noopener">Blog and&nbsp;Resources</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Brain Health Neurology</p>
+  <h1 class="hero-title">The Brain Health&nbsp;Blueprint</h1>
+  <p class="hero-subtitle">A Physician-Directed Cognitive Health Assessment and&nbsp;Plan</p>
+  <p class="hero-name">Michael K. Lowe, MD &nbsp;·&nbsp; Neurology Resident</p>
+  <div class="gold-rule"></div>
+  <a href="#schedule" class="hero-cta">Get Started →</a>
+  <p class="hero-price">$399 &nbsp;·&nbsp; Cash Pay &nbsp;·&nbsp; Insurance Not Accepted</p>
+</header>
+
+<!-- SEGMENT MENU -->
+<section class="section section-alt" id="why-are-you-here">
+  <div class="container">
+    <span class="section-eyebrow">Start Here</span>
+    <h2 class="section-title">Why are you&nbsp;here?</h2>
+    <p class="seg-intro">Your reason for being here shapes what we look for in your results&nbsp;— and what we do&nbsp;about&nbsp;them. Choose the line that sounds most&nbsp;like&nbsp;you.</p>
+
+    <div class="seg-grid">
+
+      <a class="seg-card" href="/brain-fog/">
+        <span class="seg-diamond">◆</span>
+        <span class="seg-say">I feel foggy, tired, or not as sharp as I used&nbsp;to&nbsp;be.</span>
+        <span class="seg-tag">Brain Fog</span>
+      </a>
+
+      <a class="seg-card" href="/workplace/">
+        <span class="seg-diamond">◆</span>
+        <span class="seg-say">I need to keep my edge — and my team's — sharp&nbsp;at&nbsp;work.</span>
+        <span class="seg-tag">Workplace Performance</span>
+      </a>
+
+      <a class="seg-card" href="/collision/">
+        <span class="seg-diamond">◆</span>
+        <span class="seg-say">I was in an accident, and I have not been the&nbsp;same&nbsp;since.</span>
+        <span class="seg-tag">After a Collision</span>
+      </a>
+
+      <a class="seg-card" href="/sports/">
+        <span class="seg-diamond">◆</span>
+        <span class="seg-say">I have taken hits to the head playing&nbsp;a&nbsp;sport.</span>
+        <span class="seg-tag">Contact Sports</span>
+      </a>
+
+      <a class="seg-card" href="/attention/">
+        <span class="seg-diamond">◆</span>
+        <span class="seg-say">I think attention has always been&nbsp;my&nbsp;problem.</span>
+        <span class="seg-tag">Attention and Focus</span>
+      </a>
+
+      <a class="seg-card" href="/sleep/">
+        <span class="seg-diamond">◆</span>
+        <span class="seg-say">I do not sleep well, and I can feel it in&nbsp;my&nbsp;thinking.</span>
+        <span class="seg-tag">Sleep</span>
+      </a>
+
+
+
+    </div>
+
+    <p class="seg-none">None of these quite fit? <a href="#what-you-get">See what&nbsp;is&nbsp;included</a> — and bring your own question to&nbsp;the&nbsp;consultation.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="section" id="about">
+  <div class="container">
+    <span class="section-eyebrow">Why This Matters</span>
+    <h2 class="section-title">Your brain deserves more than 18&nbsp;minutes.</h2>
+    <p class="section-body">The average primary care appointment runs 18 minutes. That is the national average — and it is not a criticism of primary care physicians, who are doing their best inside a system that was not designed for complexity. It is simply a fact: 18 minutes is not enough time to administer a validated cognitive battery, review nine domains of results, work through 45 research-identified risk factors, and build a meaningful, personalized&nbsp;plan.</p>
+    <p class="section-body">The Brain Health Blueprint was built around a different premise entirely. An evaluation first — on your own time, at your own pace. Then a physician consultation that runs as long as it needs to, with no clock on the wall and no waiting room behind&nbsp;you.</p>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="section section-alt" id="what-you-get">
+  <div class="container">
+    <span class="section-eyebrow">What's Included</span>
+    <h2 class="section-title">An evaluation, then a comprehensive physician encounter. One&nbsp;flat&nbsp;fee.</h2>
+    <p class="section-body">The Brain Health Blueprint is a two-touch service: a self-administered cognitive evaluation followed by a single, comprehensive physician consultation. Here is what is included at&nbsp;$399:</p>
+    <ul class="deliverables">
+      <li>
+        <span class="diamond">◆</span>
+        <div>
+          <span class="deliverable-title">CNS Vital Signs Cognitive&nbsp;Assessment</span>
+          A validated, peer-reviewed computerized neuropsychological battery that measures nine cognitive domains — including memory, attention, processing speed, and executive function. You complete it independently at home — on a computer if you have one, or on a tablet or&nbsp;phone. It takes about 45&nbsp;minutes, because most online cognitive screens run ten and measure almost&nbsp;nothing. Results are auto-scored against age-matched normative data and immediately available for physician&nbsp;review.
+        </div>
+      </li>
+      <li>
+        <span class="diamond">◆</span>
+        <div>
+          <span class="deliverable-title">Physician Consultation and Results&nbsp;Review</span>
+          A dedicated follow-up call or video visit with Dr. Lowe covering your results in plain language — what each domain means, where you stand relative to your age-matched peers, and what your results suggest about your cognitive health&nbsp;trajectory.
+        </div>
+      </li>
+      <li>
+        <span class="diamond">◆</span>
+        <div>
+          <span class="deliverable-title">45-Factor Cognitive Risk&nbsp;Profile</span>
+          A structured review of 45 risk factors for cognitive decline — most of them modifiable — spanning six research-backed pillars: cardiovascular health, metabolism, neuroinflammation, toxic load, physical foundations, and cognitive reserve. Each factor is evidence-based and individually addressed during your&nbsp;consultation.
+        </div>
+      </li>
+      <li>
+        <span class="diamond">◆</span>
+        <div>
+          <span class="deliverable-title">Personalized Action Plan</span>
+          You leave the consultation with a clear, prioritized set of recommendations — not a generic list, but a physician-built plan grounded in your specific assessment results and risk&nbsp;profile.
+        </div>
+      </li>
+      <li>
+        <span class="diamond">◆</span>
+        <div>
+          <span class="deliverable-title">Complimentary Copy: <em>Your Brain Is Not Destined to&nbsp;Decline</em></span>
+          Dr. Lowe's physician-written guide covering all 45 risk factors in plain language — with the peer-reviewed research behind each one. A $49 value, included at no&nbsp;charge.
+        </div>
+      </li>
+      <li>
+        <span class="diamond">◆</span>
+        <div>
+          <span class="deliverable-title">Access to the Physician-Sourced Supplement&nbsp;Store</span>
+          Patients receive access to Dr. Lowe's curated supplement dispensary at physician pricing — the same products and formulations used in clinical practice, without retail&nbsp;markup.
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- SAMPLE REPORT -->
+<section class="section">
+  <div class="container report-section">
+    <span class="section-eyebrow">The Assessment</span>
+    <h2 class="section-title">What your results look&nbsp;like.</h2>
+    <p class="section-body">The CNS Vital Signs assessment generates an auto-scored report across nine cognitive domains, benchmarked against age-matched normative data. Color-coded and immediately readable — by you and by Dr. Lowe before your&nbsp;consultation.</p>
+    <img src="cnsvs_sample_report.jpg" alt="Sample CNS Vital Signs cognitive assessment report showing nine domain scores" class="report-img">
+    <p class="report-caption">Sample CNS Vital Signs report. Individual results vary. All reports are reviewed with you personally during your physician&nbsp;consultation.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-alt" id="how-it-works">
+  <div class="container">
+    <span class="section-eyebrow">How It Works</span>
+    <h2 class="section-title">Simple. Entirely on your&nbsp;schedule.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <strong>Book and Pay Online</strong>
+          <span>Schedule your consultation online. You will receive a confirmation with your secure link to the CNS Vital Signs assessment platform and everything else you need to get&nbsp;started.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <strong>Complete the Assessment on Your Own&nbsp;Time</strong>
+          <span>Take the computerized cognitive assessment at home, at your convenience, before your scheduled consultation — on a computer if you have one, or on a tablet or&nbsp;phone. No clinic visit required. No special equipment&nbsp;needed.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <strong>Meet With Dr. Lowe</strong>
+          <span>Your consultation takes place by phone or video — or in person if you prefer and are in the Nashville area. Dr. Lowe reviews your results, walks through your personal risk profile, and builds your action plan alongside you. The consultation runs as long as it needs&nbsp;to.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <strong>Leave With a Plan</strong>
+          <span>Your personalized action plan and complimentary book are delivered immediately following your consultation. No waiting rooms. No rushed follow-ups. No additional&nbsp;billing.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSURANCE -->
+<section class="section">
+  <div class="container">
+    <div class="insurance-callout">
+      <h3>Why this service does not accept insurance — and why that is better&nbsp;for&nbsp;you.</h3>
+      <p>Insurance reimbursement models are built around 18-minute appointments. Research confirms it: that is the national average for a primary care visit. Eighteen minutes is not enough time to administer a validated cognitive battery, review nine domains of results, work through 45 risk factors, and build a personalized plan. It is not enough time to do this work&nbsp;properly.</p>
+      <p>By operating outside the insurance system, this service answers to you — not to a payer. The consultation runs as long as it needs to. The plan is built around your results, not around a&nbsp;billing&nbsp;code.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE CTA -->
+<section class="section section-alt" id="schedule">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Ready to get started?</h2>
+      <p>Schedule your Brain Health Blueprint today. One flat fee. Cash pay. No waiting rooms. No clock on&nbsp;the&nbsp;wall.</p>
+      <div class="cta-price">$399</div>
+      <p class="cta-price-note">Assessment · Physician Consultation · 45-Factor Risk Review · Action Plan · Book · Supplement&nbsp;Access</p>
+      <a href="https://calendly.com/michaelkennethlowe27/30min?utm_source=direct&utm_medium=website&utm_campaign=homepage" class="cta-btn">Schedule Online →</a>
+      <p class="cta-divider">or</p>
+      <a href="mailto:info@memorycareneurology.com?subject=I would like to request a date and time for my Brain Health Blueprint consultation." class="cta-email-btn">Request a Date and Time via Email&nbsp;→</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <span class="section-eyebrow">Frequently Asked&nbsp;Questions</span>
+    <h2 class="section-title faq-title">What you need to know.</h2>
+
+    <details class="faq-item">
+      <summary>Who is this service for?</summary>
+      <p class="faq-a">Anyone who wants an objective, physician-reviewed picture of their cognitive health. You do not need a referral, a diagnosis, or a prior concern. Most people who book it are simply paying&nbsp;attention.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>What does the CNS Vital Signs assessment&nbsp;measure?</summary>
+      <p class="faq-a">CNS Vital Signs is a validated, peer-reviewed computerized neuropsychological battery used in clinical research and physician practices worldwide. It measures nine cognitive domains: composite memory, verbal memory, visual memory, processing speed, reaction time, complex attention, cognitive flexibility, executive function, and psychomotor speed. Results are auto-scored and compared against age-matched normative data — giving you an objective picture of where you stand, not just how&nbsp;you&nbsp;feel.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is this a diagnostic&nbsp;service?</summary>
+      <p class="faq-a">No. The Brain Health Blueprint is a health assessment and educational consultation — not a diagnostic evaluation and not a substitute for clinical care. It provides an objective picture of your cognitive performance and a structured review of modifiable risk factors. If results raise concerns that may warrant further neurological evaluation, Dr. Lowe will discuss next steps with you during&nbsp;the&nbsp;consultation.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How long does the consultation&nbsp;take?</summary>
+      <p class="faq-a">As long as it needs to. There is no hard stop. Most consultations run 45 to 60 minutes, but if there is more to cover, we cover it. That is precisely why this service operates outside an insurance-driven appointment&nbsp;model.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can family members join the&nbsp;consultation?</summary>
+      <p class="faq-a">Absolutely — and they are encouraged to. Family members and caregivers often provide important context, and their presence means the plan can be supported at home from&nbsp;day&nbsp;one.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I repeat the assessment over&nbsp;time?</summary>
+      <p class="faq-a">Yes, and longitudinal tracking is one of the most clinically valuable aspects of the CNS Vital Signs platform. Repeating the assessment annually or biannually lets you track changes over time, which is far more informative than any single&nbsp;snapshot. Re-testing is a separate service at its own fee; the $399 covers one assessment, one consultation, and one written&nbsp;plan.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I submit this to my insurance for&nbsp;reimbursement?</summary>
+      <p class="faq-a">This service is not billed through insurance and does not generate insurance-compatible clinical documentation. Payment is collected at the time&nbsp;of&nbsp;booking.</p>
+    </details>
+
+    <p class="disclaimer">The Brain Health Blueprint is a health assessment and educational consultation. It does not establish a traditional physician-patient clinical treatment relationship and is not a substitute for care from your primary physician or a treating neurologist. If you have active medical concerns, please consult a licensed physician in&nbsp;your&nbsp;state.</p>
+  </div>
+</section>
+
+<footer class="page-footer">
+  <p>Brain Health Neurology &nbsp;·&nbsp; Michael K. Lowe, MD, Neurology&nbsp;Resident<br>
+  An information resource maintained by Dr.&nbsp;Lowe: <a href="https://www.memorycareneurology.com/">MemoryCareNeurology.com</a> &nbsp;·&nbsp; <a href="mailto:info@memorycareneurology.com">info@memorycareneurology.com</a><br>
+  <a href="cv.pdf" style="font-size:12px;opacity:0.6;" target="_blank">Dr. Lowe's CV</a> &nbsp;·&nbsp; <a href="/consent/" style="font-size:12px;opacity:0.6;">Consent and&nbsp;Acknowledgment</a></p>
+</footer>
+
+
+<script>
+(function () {
+  var incoming = new URLSearchParams(window.location.search);
+  var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  var present = keys.filter(function (k) { return incoming.get(k); });
+  if (!present.length) return;
+  var links = document.querySelectorAll('a[href]');
+  for (var i = 0; i < links.length; i++) {
+    var raw = links[i].getAttribute('href');
+    if (!raw) continue;
+    var isCalendly = raw.indexOf('calendly.com') > -1;
+    var isInternal = raw.charAt(0) === '/' || raw.indexOf('brainhealthneurology.com') > -1;
+    if (!isCalendly && !isInternal) continue;
+    try {
+      var u = new URL(links[i].href);
+      present.forEach(function (k) { u.searchParams.set(k, incoming.get(k)); });
+      links[i].href = u.toString();
+    } catch (e) { }
+  }
+})();
+</script>
+</body>
+</html>
